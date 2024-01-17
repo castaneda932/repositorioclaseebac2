@@ -7,11 +7,13 @@ public class Ejerciciosestructuras : MonoBehaviour
 {
 
     List<int> miLista= new List<int>();
+    List<int> ordenadosDescendente = new List<int>();
 
 
     void Start()
     {
-        listaDeNumeros();
+        
+        Arreglos();
 
     }
 
@@ -33,6 +35,22 @@ public class Ejerciciosestructuras : MonoBehaviour
         }
 
         
+    }
+    void Arreglos()
+    {
+        for (int i = 0; i < 50; i++)
+        {
+            ordenadosDescendente.Add(i);
+        }
+        foreach (var numero in ordenadosDescendente)
+        {
+            Debug.Log(numero);
+        }
+        ordenadosDescendente.Reverse();
+        foreach (var numero in ordenadosDescendente)
+        {
+            Debug.Log(numero);
+        }
     }
     
     
