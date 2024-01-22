@@ -7,11 +7,13 @@ public class Ejerciciosestructuras : MonoBehaviour
 {
 
     List<int> miLista= new List<int>();
+    int[] enteros = { 1, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30 };
     List<int> ordenadosDescendente = new List<int>();
 
 
     void Start()
     {
+
         
         Arreglos();
 
@@ -22,12 +24,12 @@ public class Ejerciciosestructuras : MonoBehaviour
     {
 
     }
-    void listaDeNumeros()
+    void listaDeNumeros(int tamaño = 50, int rangoInf = 0, int rangoSup = 50)
     {
 
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < tamaño; i++)
         {
-            miLista.Add(Random.Range(0, 50));
+            miLista.Add(Random.Range(rangoInf, rangoSup));
         }
         foreach (var numero in miLista)
         {
@@ -38,20 +40,27 @@ public class Ejerciciosestructuras : MonoBehaviour
     }
     void Arreglos()
     {
-        for (int i = 0; i < 50; i++)
+       for (int i = 0; i < enteros.Length; i++)
         {
             ordenadosDescendente.Add(i);
         }
-        foreach (var numero in ordenadosDescendente)
+       foreach(var numero in ordenadosDescendente)
         {
             Debug.Log(numero);
         }
-        ordenadosDescendente.Reverse();
-        foreach (var numero in ordenadosDescendente)
+       //reverse se usa para ordenar la lista previa de manera descendente
+       ordenadosDescendente.Reverse();
+       foreach (var numero in ordenadosDescendente)
         {
             Debug.Log(numero);
         }
+
+       
+
+        
     }
+
+   
     
     
 
